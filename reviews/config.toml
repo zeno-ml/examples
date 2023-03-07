@@ -1,0 +1,11 @@
+view = "text-classification"
+functions = "./"
+metadata = "./amazon_pred.csv"
+models = [
+    "distilbert-base-uncased-finetuned-sst-2-english",
+    "fabriceyhc/bert-base-uncased-amazon_polarity",
+]
+data_column = "content"
+label_column = "label"
+batch_size = 16
+port = 8002

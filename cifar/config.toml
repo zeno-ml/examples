@@ -1,0 +1,18 @@
+view = "image-classification"
+functions = "./functions/"
+metadata = "cifar_pred.csv"
+models = [
+    "models/cifar_net_2.pth",
+    "models/cifar_net_5.pth",
+    "models/cifar_net_10.pth",
+    "models/cifar_net_20.pth",
+]
+data_path = "./data/test/"
+
+data_column = "id"
+id_column = "id"
+label_column = "label"
+
+batch_size = 16
+samples = 80
+port = 8000

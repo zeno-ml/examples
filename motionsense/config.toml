@@ -1,0 +1,11 @@
+view = "timeseries-classification"
+metadata = "./data/motionsense.csv"
+data_path = "./data/A_DeviceMotion_data/A_DeviceMotion_data"
+
+data_column = "file"
+id_column = "file"
+label_column = "label"
+
+batch_size = 16
+samples = 15
+port = 8004

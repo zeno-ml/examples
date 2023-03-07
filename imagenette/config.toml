@@ -1,0 +1,11 @@
+view = "image-classification"
+functions = "./functions/"
+metadata = "./imagenette_formatted.csv"
+models = ["IMAGENET1K_V1", "IMAGENET1K_V2"]
+data_path = "./data"
+data_type = "path"
+data_column = "id"
+id_column = "id"
+label_column = "label"
+batch_size = 32
+port = 8009
