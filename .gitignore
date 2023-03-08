@@ -5,7 +5,6 @@ breast_cancer_data/
 
 *.parquet
 **/.zeno_cache/**
-**/models/**
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
