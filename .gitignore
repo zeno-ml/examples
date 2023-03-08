@@ -1,4 +1,5 @@
 data/
+**/data/**
 face-generation/
 breast_cancer_data/
 
