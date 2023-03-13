@@ -1,6 +1,8 @@
+import numpy as np
 from pandas import DataFrame
 from sklearn.metrics import f1_score, recall_score
-from zeno import ZenoOptions, MetricReturn, metric, distill, DistillReturn
+
+from zeno import DistillReturn, MetricReturn, ZenoOptions, distill, metric
 
 
 @metric
@@ -14,17 +16,21 @@ def accuracy(df, ops: ZenoOptions):
 
 @metric
 def recall(df, ops: ZenoOptions):
-    rec = recall_score(df[ops.label_column], df[ops.output_column], average="macro")
-    if type(rec) == float:
-        return MetricReturn(metric=100 * float(rec))
+    rec = recall_score(
+        df[ops.label_column], df[ops.output_column], average="macro", zero_division=0
+    )
+    if type(rec) == np.float64:
+        return MetricReturn(metric=100 * rec)
     else:
         return MetricReturn(metric=0)
 
 
 @metric
 def f1(df, ops: ZenoOptions):
-    f = f1_score(df[ops.label_column], df[ops.output_column], average="macro")
-    if type(f) == float:
+    f = f1_score(
+        df[ops.label_column], df[ops.output_column], average="macro", zero_division=0
+    )
+    if type(f) == np.float64:
         return MetricReturn(metric=100 * f)
     else:
         return MetricReturn(metric=0)

@@ -13,6 +13,6 @@ data_column = "id"
 id_column = "id"
 label_column = "label"
 
-batch_size = 16
+batch_size = 32
 samples = 80
 port = 8000
