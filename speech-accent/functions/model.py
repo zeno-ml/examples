@@ -52,7 +52,7 @@ def load_model(model_path):
 @distill
 def country(df, ops: ZenoOptions):
     if df["birthplace"][0] == df["birthplace"][0]:
-        return DistillReturn(distill_output=df["birthplace"].str.split(", ")[-1][-1])
+        return DistillReturn(distill_output=[df["birthplace"].str.split(", ")[-1][-1]])
     return DistillReturn(distill_output=[""] * len(df))
 
 

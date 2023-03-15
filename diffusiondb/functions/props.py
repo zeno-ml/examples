@@ -1,5 +1,21 @@
-from zeno import distill, metric, ZenoOptions, DistillReturn, MetricReturn
+from zeno import (
+    distill,
+    metric,
+    model,
+    ZenoOptions,
+    DistillReturn,
+    MetricReturn,
+    ModelReturn,
+)
 from pandas import DataFrame
+
+
+@model
+def model_ret(name):
+    def mod(df: DataFrame, ops: ZenoOptions):
+        return ModelReturn(model_output=[""] * len(df))
+
+    return mod
 
 
 @distill

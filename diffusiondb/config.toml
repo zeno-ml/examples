@@ -1,5 +1,6 @@
 view = "image-classification"
 functions = "./functions"
+models = ["stable_diffusion"]
 metadata = "./data/metadata_f.parquet"
 data_path = "https://diffusiondb.m4ke.org/"
 data_column = "image_name"

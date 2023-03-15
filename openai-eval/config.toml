@@ -1,0 +1,8 @@
+view = "openai-chat"
+functions = "./functions/"
+metadata = "./.jsonl"
+models = ["ground-truth"]
+data_column = "input"
+label_column = "ideal"
+batch_size = 16
+port = 8002
