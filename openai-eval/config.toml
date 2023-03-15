@@ -1,6 +1,6 @@
 view = "openai-chat"
 functions = "./functions/"
-metadata = "./.jsonl"
+metadata = "./reverse_string.jsonl"
 models = ["ground-truth"]
 data_column = "input"
 label_column = "ideal"
