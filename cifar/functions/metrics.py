@@ -16,6 +16,9 @@ def accuracy(df, ops: ZenoOptions):
 
 @metric
 def recall(df, ops: ZenoOptions):
+    if len(df) == 0:
+        return MetricReturn(metric=0)
+
     rec = recall_score(
         df[ops.label_column], df[ops.output_column], average="macro", zero_division=0
     )
@@ -27,6 +30,9 @@ def recall(df, ops: ZenoOptions):
 
 @metric
 def f1(df, ops: ZenoOptions):
+    if len(df) == 0:
+        return MetricReturn(metric=0)
+    
     f = f1_score(
         df[ops.label_column], df[ops.output_column], average="macro", zero_division=0
     )
