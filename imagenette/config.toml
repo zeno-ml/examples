@@ -1,6 +1,6 @@
 view = "image-classification"
 functions = "./functions/"
-metadata = "./imagenette_formatted.csv"
+metadata = "./metadata/validation_labels.csv"
 models = ["IMAGENET1K_V1", "IMAGENET1K_V2"]
 data_path = "./data"
 data_type = "path"
