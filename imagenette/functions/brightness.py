@@ -1,6 +1,7 @@
 import os
 
 from PIL import Image
+
 from zeno import distill
 from zeno.api import DistillReturn
 

@@ -45,3 +45,8 @@ def f1(df, ops: ZenoOptions):
 @distill
 def incorrect(df: DataFrame, ops: ZenoOptions):
     return DistillReturn(distill_output=df[ops.label_column] != df[ops.output_column])
+
+
+# @distill
+# def correct(df: DataFrame, ops: ZenoOptions):
+#     return DistillReturn(distill_output=df[ops.label_column] == df[ops.output_column])
