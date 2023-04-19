@@ -7,12 +7,10 @@ models = [
     "models/cifar_net_10.pth",
     "models/cifar_net_20.pth",
 ]
-data_path = "./data/test/"
-
+data_path = "./data/CIFAR-10-images/test/"
 data_column = "id"
 id_column = "id"
 label_column = "label"
-
 batch_size = 32
 samples = 80
 port = 8000
