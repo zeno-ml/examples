@@ -1,13 +1,14 @@
+from pandas import DataFrame
+
 from zeno import (
-    distill,
-    metric,
-    model,
-    ZenoOptions,
     DistillReturn,
     MetricReturn,
     ModelReturn,
+    ZenoOptions,
+    distill,
+    metric,
+    model,
 )
-from pandas import DataFrame
 
 
 @model

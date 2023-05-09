@@ -1,12 +1,12 @@
 import os
+import time
 
 import torch
 import torchvision.transforms as transforms
-import time
-from PIL import Image
-from zeno import model, ModelReturn
-
 from cifar_model import Net
+from PIL import Image
+
+from zeno import ModelReturn, model
 
 transform_image = transforms.Compose(
     [transforms.ToTensor(), transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))]
@@ -29,7 +29,7 @@ classes = (
 @model
 def load_model(model_path):
     net = Net()
-    net.load_state_dict(torch.load(model_path))
+    net.load_state_dict(torch.load("./models/" + model_path + ".pth"))
 
     def pred(df, ops):
         imgs = [

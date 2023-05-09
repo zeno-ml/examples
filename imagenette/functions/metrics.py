@@ -1,6 +1,7 @@
 from pandas import DataFrame
 from sklearn.metrics import f1_score, recall_score
-from zeno import ZenoOptions, MetricReturn, metric, distill, DistillReturn
+
+from zeno import DistillReturn, MetricReturn, ZenoOptions, distill, metric
 
 
 @metric
@@ -31,10 +32,5 @@ def f1(df, ops: ZenoOptions):
 
 
 @distill
-def incorrect(df: DataFrame, ops: ZenoOptions):
-    return DistillReturn(distill_output=df[ops.label_column] != df[ops.output_column])
-
-
-@distill
-def output_label(df: DataFrame, ops: ZenoOptions):
-    return DistillReturn(distill_output=df[ops.output_column])
+def correct(df: DataFrame, ops: ZenoOptions):
+    return DistillReturn(distill_output=df[ops.label_column] == df[ops.output_column])

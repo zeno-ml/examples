@@ -2,7 +2,8 @@ import os
 
 import librosa
 import numpy as np
-from zeno import ZenoOptions, distill, DistillReturn
+
+from zeno import DistillReturn, ZenoOptions, distill
 
 
 @distill
@@ -23,3 +24,9 @@ def length(df, ops: ZenoOptions):
         y, _ = librosa.load(audio)
         amps.append(len(y))
     return DistillReturn(distill_output=amps)
+
+
+@distill
+def special_chars(df, ops: ZenoOptions):
+    chars = df[ops.output_column].str.count(r"[^\w\s]")
+    return DistillReturn(distill_output=chars)
